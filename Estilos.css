@@ -1,0 +1,33 @@
+/*Reglas Estilos CSSS */
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+body{
+    background: rgb(212, 245, 223);
+    color: rgb(0, 0, 0);
+}
+input{
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+    padding: 5px;
+}
+input:valid{
+    background-color: #c7ffc0;
+    border: 1px solid #dbd4d4;
+}
+input:invalid{
+    background-color: #f3baba;
+    border: 1px solid #fd0000;
+}
+.parafo{
+    color: rgb(255, 0, 0);
+    background: #c7ffc0;
+}
+#parafo{
+    text-transform: uppercase;
+}
+#tecnologias{
+    text-transform: uppercase;
+}
