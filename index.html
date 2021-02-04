@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="row p-2">
-                        <div class="col-sm">NOMBRE: </div>
+                        <div class="col-sm">NOMBRE:</div>
                         <div class="col-sm">
                             <input v-model="alumno.nombre"  type="text" class="form-control form-control-sm">
                         </div>
@@ -40,6 +40,30 @@
                         <div class="col-sm">MUNICIPIO:</div>
                         <div class="col-sm">
                             <input v-model="alumno.municipio" type="text" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-sm">DEPARTAMENTO:</div>
+                        <div class="col-sm"> 
+                        <input v-model="alumno.departamento"  type="text" class="form-control form-control-sm">    
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-sm">TELEFONO:</div>
+                        <div class="col-sm"> 
+                        <input v-model="alumno.telefono"  type="tel" class="form-control form-control-sm">    
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-sm">FECHA DE NACIMIENTO:</div>
+                        <div class="col-sm"> 
+                        <input v-model="alumno.fecha_nacimiento" type="date" class="form-control form-control-sm">    
+                        </div>
+                    </div>        
+                    <div class="row p-2">
+                        <div class="col-sm">SEXO:</div>
+                        <div class="col-sm"> 
+                        <input v-model="alumno.sexo" type="text" class="form-control form-control-sm">       
                         </div>
                     </div>
                     <div class="row p-2">
@@ -71,6 +95,10 @@
                                         <th>NOMBRE</th>
                                         <th>DIRECCION</th>
                                         <th>MUNICIPIO</th>
+                                        <th>DEPARTAMENTO</th>
+                                        <th>TELEFONO</th>
+                                        <th>F.NACIMIENTO</th>
+                                        <th>SEXO</th>
                                         <th>IMG</th>
                                     </tr>
                                 </thead>
@@ -80,6 +108,10 @@
                                         <td>{{ alu.nombre }}</td>
                                         <td>{{ alu.direccion }}</td>
                                         <td>{{ alu.municipio }}</td>
+                                        <td>{{ alu.departamento }}</td>
+                                        <td>{{ alu.telefono}}</td>
+                                        <td>{{ alu.fecha_nacimiento}}</td>
+                                        <td>{{ alu.sexo}}</td>
                                         <td>{{ alu.img }}</td>
                                     </tr>
                                 </tbody>
