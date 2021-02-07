@@ -12,10 +12,10 @@ var appVue = new Vue({
             nombre      : '',
             direccion   : '',
             municipio   : '',
-            departamento      : '',    
-            telefono          : '',
-            fecha_nacimiento  : '',      
-            sexo              : '',
+            departamento: '',
+            telefono    : '',
+            f_nacimiento: '',
+            sexo        : '',
             img         : '/images/No-image-available.png',
             img2        : '/images/No-image-available.png',
         },
@@ -27,8 +27,8 @@ var appVue = new Vue({
              * BD Web SQL
              */
             miDBAlumnos.transaction(tran=>{
-                tran.executeSql('INSERT INTO alumnos(idAlumno,codigo,nombre,direccion,municipio,departamento,telefono,fecha_nacimiento,sexo,img) VALUES(?,?,?,?,?,?,?,?,?) ',
-                    [++id,this.alumno.codigo,this.alumno.nombre,this.alumno.direccion,this.alumno.municipio,this.alumno.departamento,this.alumno.telefono,this.alumno.fecha_nacimiento,this.alumno.sexo,this.alumno.img]);
+                tran.executeSql('INSERT INTO alumnos(idAlumno,codigo,nombre,direccion,municipio,departamento,telefono,f_nacimiento,sexo,img) VALUES(?,?,?,?,?,?,?,?,?,?) ',
+                    [++id,this.alumno.codigo,this.alumno.nombre,this.alumno.direccion,this.alumno.municipio,this.alumno.departamento,this.alumno.telefono,this.alumno.f_nacimiento,this.alumno.sexo,this.alumno.img]);
                 this.obtenerAlumnos();
                 this.limpiar();
             }, err=>{
@@ -58,19 +58,19 @@ var appVue = new Vue({
         },
         limpiar(){
             this.alumno.codigo='';
-            this.alumno.nombre='';
+            this.alumno.nombre='';  
             this.alumno.direccion='';
             this.alumno.municipio='';
             this.alumno.departamento='';
             this.alumno.telefono='';
-            this.alumno.fecha_nacimiento='';
+            this.alumno.f_nacimiento='';
             this.alumno.sexo='';
             this.alumno.img='';
         }
     },
     created(){
         miDBAlumnos.transaction(tran=>{
-            tran.executeSql('CREATE TABLE IF NOT EXISTS alumnos(idAlumno int PRIMARY KEY NOT NULL, codigo varchar(10), nombre varchar(65), direccion varchar(60), municipio varchar(65), departamento varchar(50), telefono varchar(10), fecha_nacimiento date(), sexo varchar(20), img varchar(100))');
+            tran.executeSql('CREATE TABLE IF NOT EXISTS alumnos(idAlumno int PRIMARY KEY NOT NULL, codigo varchar(10), nombre varchar(65), direccion varchar(60), municipio varchar(65), departamento varchar(65),telefono varchar(8),f_nacimiento varchar(65),sexo varchar(1), img varchar(100))');
         }, err=>{
             console.log( err );
         });
